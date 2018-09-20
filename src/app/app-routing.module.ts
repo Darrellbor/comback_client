@@ -1,7 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { AuthGuard } from './guards/auth.guard';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: 'c', pathMatch: 'full' },
+  { path: 'a', loadChildren: './admin/admin.module#AdminModule' },
+  { path: 'ba', loadChildren: './bus-admin/bus-admin.module#BusAdminModule' },
+  { path: 'c', loadChildren: './core/core.module#CoreModule' },
+  { path: 's', loadChildren: './staff/staff.module#StaffModule' },
+  { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
