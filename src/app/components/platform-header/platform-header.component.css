@@ -1,0 +1,18 @@
+.comback-nav {
+    border-top: 3px solid #350b5c;
+}
+
+.nav-item a.active {
+    border-bottom: 3px solid #5d0d2b;
+    padding-bottom: 30px;
+    margin-bottom: -30px;
+}
+
+@media(max-width: 991px) {
+    .nav-item a.active {
+        border-bottom: 3px solid #5d0d2b;
+        margin-bottom: 0;
+        padding-bottom: 10px;
+        width: 155px;
+    }
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute,  NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'comback-rt',
@@ -7,6 +7,14 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  currentUrl;
 
-  constructor(public router: Router) { }
+  constructor(private router: Router) {
+    router.events.subscribe(event => {
+
+      if (event instanceof NavigationEnd ) {
+        this.currentUrl = event.url;
+      }
+    });
+  }
 }

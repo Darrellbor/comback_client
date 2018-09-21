@@ -4,10 +4,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'c', pathMatch: 'full' },
+  { path: '', loadChildren: './core/core.module#CoreModule' },
   { path: 'a', loadChildren: './admin/admin.module#AdminModule' },
   { path: 'ba', loadChildren: './bus-admin/bus-admin.module#BusAdminModule' },
-  { path: 'c', loadChildren: './core/core.module#CoreModule' },
   { path: 's', loadChildren: './staff/staff.module#StaffModule' },
   { path: '**', component: PageNotFoundComponent }
 ];
