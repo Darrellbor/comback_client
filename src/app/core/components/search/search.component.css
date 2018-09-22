@@ -1,0 +1,121 @@
+.main-bk {
+    min-height: 500px;
+    background-color: #e3dbea;
+}
+
+.info-bk {
+    background: url('/assets/images/app/jumbo.png')no-repeat;
+    min-height: 300px;
+    padding: 10%
+}
+
+.info-bk h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.main-content {
+    max-width: 1100px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-group-addon {
+    background-color: #fff;
+    border-left: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.addon-form-control {
+    border-right: 0px !important;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.addon-form-control:focus {
+    box-shadow: 0px 0px 0px 0px #000;
+    border: 1px solid #432360;
+}
+
+.addon-form-control:focus ~ .input-group-addon{
+    background-color: #fff;
+    border: 1px solid #432360;
+    border-left: 0px;
+}
+
+.input-group-text {
+    background-color: #fff !important; 
+    border: 0px !important;
+}
+
+.comp-box {
+    min-height: 100px;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 3px 3px 5px 2px #b8a2cc;
+    margin-bottom: 10px;
+}
+
+.comp-box a { 
+    text-decoration: none;
+}
+
+.comp-box a > h3 {
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+.comp-box hr {
+    border-top: 3px solid #432360;
+}
+
+.comp-box a > span {
+    text-decoration: none;
+    color: #000;
+}
+
+.comp-box-topC {
+    min-height: 100px;
+    border-radius: 15px;
+    background-color: #2d094e;
+    padding: 30px;
+    color: #fff;
+    box-shadow: 3px 3px 5px 2px #b8a2cc;
+    margin-bottom: 10px;
+}
+
+.comp-box-topC a { 
+    text-decoration: none;
+}
+
+.comp-box-topC a > h3 {
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.comp-box-topC a > span { 
+    text-decoration: none;
+    color: #fff;
+}
+
+.comp-box-topC hr {
+    border-top: 3px solid #fff;
+}
+
+.page-divider {
+    border-top: 3px solid #432360;
+}
+
+.empty-company {
+    text-align: center;
+}
+
+.empty-company fa {
+    font-size: 25px;
+}

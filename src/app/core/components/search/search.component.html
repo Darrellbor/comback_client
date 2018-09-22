@@ -1,0 +1,64 @@
+<div class="main-bk">
+  <div class="info-bk">
+    <h1>Search</h1>
+  </div><br>
+
+  <div class="main-content">
+    <form novalidate #searchF="ngForm" (ngSubmit)="searchCompanies(searchF)">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control addon-form-control" id="searchCompanies" name="searchCompanies" placeholder="Search Companies" [(ngModel)]="searchBus" #searchComp="ngModel" title="Search Companies">
+        <div class="input-group-addon">
+          <span class="input-group-text" id="searchCompanies">
+            <fa name="fas fa-search"></fa>
+          </span>
+        </div>
+      </div>
+    </form><br>
+
+    <div class="top-comp-block">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="comp-box-topC">
+            <!--<a href="" [routerLink]="['/complain', 54r3223d5]">-->
+              <a href="" routerLink="/complain/54r3223d5">
+                <h3>Apple</h3><hr>
+                <span><em>4.2/5.0</em></span>
+              </a>
+          </div>
+        </div><br>
+
+        <div class="col-sm-3">
+          <div class="comp-box">
+            <h3>pixels</h3><hr>
+            <span><em>4.2/5.0</em></span>
+          </div>
+        </div><br>
+
+        <div class="col-sm-3">
+          <div class="comp-box-topC">
+            <h3>Cocacola</h3><hr>
+            <span><em>4.2/5.0</em></span>
+          </div>
+        </div><br>
+
+        <div class="col-sm-3">
+          <div class="comp-box">
+            <h3>Samsung</h3><hr>
+            <span><em>4.2/5.0</em></span>
+          </div>
+        </div><br>
+      </div>
+    </div><br>
+
+    <hr class="page-divider"><br>
+
+    <div class="empty-company">
+      <fa name="fas fa-search"></fa><br>
+      <h4>Sorry there are no companies to display.</h4>
+    </div>
+
+    <div class="companies">
+
+    </div>
+  </div>
+</div>

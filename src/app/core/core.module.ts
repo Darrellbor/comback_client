@@ -4,6 +4,12 @@ import { SharedModule } from '../shared/shared.module';
 
 import { CoreRoutingModule } from './core-routing.module';
 import { HomeComponent } from './components/home/home.component';
+import { SearchComponent } from './components/search/search.component';
+import { BusComplainComponent } from './components/bus-complain/bus-complain.component';
+import { BusFeedbackComponent } from './components/bus-feedback/bus-feedback.component';
+import { ComplainDetailsComponent } from './components/complain-details/complain-details.component';
+import { CompanyComponent } from './components/company/company.component';
+import { CustomerComponent } from './components/customer/customer.component';
 
 @NgModule({
   imports: [
@@ -11,7 +17,7 @@ import { HomeComponent } from './components/home/home.component';
     SharedModule,
     CoreRoutingModule
   ],
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, SearchComponent, BusComplainComponent, BusFeedbackComponent, ComplainDetailsComponent, CompanyComponent, CustomerComponent],
   providers: [],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

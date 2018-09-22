@@ -1,0 +1,119 @@
+<div class="main-bk">
+  <div class="main-content">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="banner">
+          <h2>Company</h2><hr>
+          <p>The company section is where you access the admin and staff accounts with appeal priviledges. Welcome back! we hope you make informed decisions from the pool of responses from your customers. :-)</p>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="splash-back">
+          <div class="switch-btns">
+            <div class="btn-group">
+              <a href="Javascript:void(0)" (click)="changeState('cAdmin')" class="btn i-comback-btn" [class.btn-active]="state == 'cAdmin' ? true : false">Admin Login</a>
+              <a href="Javascript:void(0)" (click)="changeState('cRegister')" class="btn i-comback-btn" [class.btn-active]="state == 'cRegister' ? true : false">Admin Register</a>
+              <a href="Javascript:void(0)" (click)="changeState('sLogin')" class="btn i-comback-btn" [class.btn-active]="state == 'sLogin' ? true : false">Staff Login</a>
+            </div>
+          </div><br>
+          <form novalidate #busAdmin="ngForm" (ngSubmit)="busAdminLogin(busAdmin)" *ngIf="state=='cAdmin'">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" class="form-control c--form-control" id="email" name="email" [(ngModel)]="user.email" #email="ngModel" required pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+            </div>
+
+            <div class='disclamier' *ngIf='!email.valid && email.touched'>Enter a valid email address</div>
+
+            <div class="form-group">
+              <label for="password">password</label>
+              <input type="password" class="form-control c--form-control" id="password" name="password" [(ngModel)]="user.password" #password="ngModel" required minlength="8">
+            </div>
+
+            <div class='disclamier' *ngIf='!password.valid && password.touched'>Enter a password of at least 8 characters</div>
+
+            <div class="btn-house">
+              <button type="submit" class="btn comback-btn" [disabled]="!busAdmin.valid">Company Admin Login</button>
+            </div>
+          </form>
+
+          <form novalidate #busAdminR="ngForm" (ngSubmit)="busAdminRegister(busAdminR)" *ngIf="state=='cRegister'">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="first">First Name</label>
+                  <input type="text" class="form-control c--form-control" id="first" name="first" [(ngModel)]="register.first_name" #first="ngModel" required>
+                </div>
+
+                <div class='disclamier' *ngIf='!first.valid && first.touched'>Enter your first name</div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="last">Last Name</label>
+                  <input type="text" class="form-control c--form-control" id="last" name="last" [(ngModel)]="register.last_name" #last="ngModel" required>
+                </div>
+
+                <div class='disclamier' *ngIf='!last.valid && last.touched'>Enter your last name</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" class="form-control c--form-control" id="email" name="email" [(ngModel)]="register.email" #email="ngModel" required pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+            </div>
+
+            <div class='disclamier' *ngIf='!email.valid && email.touched'>Enter a valid email address</div>
+
+            <div class="form-group">
+              <label for="sex">Sex</label>
+              <select name="sex" id="sex" class="form-control c--form-control" [(ngModel)]="register.sex" #sex="ngModel" required>
+                <option value=""></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+
+            <div class='disclamier' *ngIf='!sex.valid && sex.touched'>Enter your sex</div>
+
+            <div class="form-group">
+              <label for="bus_name">Business Name</label>
+              <input type="text" class="form-control c--form-control" id="bus_name" name="bus_name" [(ngModel)]="register.bus_name" #bus_name="ngModel" required>
+            </div>
+
+            <div class='disclamier' *ngIf='!bus_name.valid && bus_name.touched'>Enter your business name</div>
+
+            <div class="form-group">
+              <label for="password">password</label>
+              <input type="password" class="form-control c--form-control" id="password" name="password" [(ngModel)]="register.password" #password="ngModel" required minlength="8">
+            </div>
+
+            <div class='disclamier' *ngIf='!password.valid && password.touched'>Enter a password of at least 8 characters</div>
+
+            <div class="btn-house">
+              <button type="submit" class="btn comback-btn" [disabled]="!busAdminR.valid">Company Admin Register</button>
+            </div>
+          </form>
+
+          <form novalidate #staffL="ngForm" (ngSubmit)="staffLogin(staffL)" *ngIf="state=='sLogin'">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" class="form-control c--form-control" id="email" name="email" [(ngModel)]="staff.email" #email="ngModel" required pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+            </div>
+
+            <div class='disclamier' *ngIf='!email.valid && email.touched'>Enter a valid email address</div>
+
+            <div class="form-group">
+              <label for="password">password</label>
+              <input type="password" class="form-control c--form-control" id="password" name="password" [(ngModel)]="staff.password" #password="ngModel" required minlength="8">
+            </div>
+
+            <div class='disclamier' *ngIf='!password.valid && password.touched'>Enter a password of at least 8 characters</div>
+
+            <div class="btn-house">
+              <button type="submit" class="btn comback-btn" [disabled]="!staffL.valid">Staff Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
